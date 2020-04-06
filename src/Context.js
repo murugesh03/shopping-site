@@ -5,11 +5,11 @@ const ProductContext = createContext();
 const ProductProvider = (props) => {
   const [productinfo, storeProductinfo] = useState({
     products: [],
-    detailProduct: detailProduct,
+    detailProducts: detailProduct,
   });
   useEffect(() => {
     setProducts();
-  },[]);
+  }, []);
   const handelDetail = () => {
     console.log("hello from detail");
   };

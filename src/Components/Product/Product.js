@@ -1,11 +1,13 @@
 import React from "react";
 import "./Product.scss";
 import { Link } from "react-router-dom";
-import { ProductConsumer } from "../../Context";
+// import { ProductConsumer } from "../../Context";
 import PropTypes from "prop-types";
 const Product = (props) => {
   const { id, title, img, price, inCart } = props.product;
-  const handleEvent = () => {};
+  const handleEvent = () => {
+    console.log("click on me");
+  };
   return (
     <div className="mx-auto col-md-6 col-lg-3 my-3 product-wrapper">
       <div className="card">
