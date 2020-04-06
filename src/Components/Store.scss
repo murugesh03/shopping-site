@@ -1,0 +1,18 @@
+@import "../utilities/Variable.scss";
+
+body {
+  font-family: "Oswald", sans-serif !important;
+  background-color: $main-white !important;
+  color: $main-dark !important;
+}
+.text-title {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+.text-blue {
+  color: $main-blue;
+}
+.text-bright {
+  color: $light-blue;
+}

@@ -1,0 +1,59 @@
+.product-wrapper .card {
+  border-color: transparent;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+}
+
+.product-wrapper .card-footer {
+  background: transparent;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  border-top: transparent;
+}
+
+.product-wrapper:hover .card {
+  border: 0.04rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.product-wrapper:hover .card-footer {
+  background: rgba(247, 247, 247, 0);
+}
+
+.product-wrapper .card-img-top {
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.product-wrapper .img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-wrapper .img-container:hover .card-img-top {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.product-wrapper .img-container:hover .cart-btn {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.product-wrapper .cart-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.2rem 0.4rem;
+  background: #009ffd;
+  border: none;
+  color: #f3f3f3;
+  font-size: 1.4rem;
+  border-radius: 0.5rem 0 0 0;
+  -webkit-transform: translate(100%, 100%);
+          transform: translate(100%, 100%);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+/*# sourceMappingURL=Product.css.map */

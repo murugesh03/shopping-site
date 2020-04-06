@@ -1,0 +1,20 @@
+body {
+  font-family: "Oswald", sans-serif !important;
+  background-color: #f3f3f3 !important;
+  color: #232528 !important;
+}
+
+.text-title {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-blue {
+  color: #2a2a72;
+}
+
+.text-bright {
+  color: #009ffd;
+}
+/*# sourceMappingURL=Store.css.map */
