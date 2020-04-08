@@ -7,16 +7,6 @@ const ProductProvider = (props) => {
     products: [],
     detailProducts: detailProduct,
   });
-  useEffect(() => {
-    setProducts();
-  }, []);
-  const handelDetail = () => {
-    console.log("hello from detail");
-  };
-  const addToCart = () => {
-    console.log("hello from add to cart");
-  };
-
   const setProducts = () => {
     let products = [];
     storeProducts.forEach((item) => {
@@ -24,14 +14,34 @@ const ProductProvider = (props) => {
       products = [...products, singleItem];
     });
     storeProductinfo(() => {
-      return { products: products };
+      return { ...productinfo, products: products };
     });
   };
+
+  useEffect(() => {
+    setProducts();
+  }, []);
+
+  const getItem = (id) => {
+    const product = productinfo.products.find((item) => item.id === id);
+    return product;
+  };
+  const handleDetail = (id) => {
+    const product = getItem(id);
+
+    storeProductinfo(() => {
+      return { detailProducts: product };
+    });
+  };
+  const addToCart = (id) => {
+    console.log(`hello from add to cart is ${id} `);
+  };
+
   return (
     <ProductContext.Provider
       value={{
         ...productinfo,
-        handelDetail: handelDetail,
+        handleDetail: handleDetail,
         addToCart: addToCart,
       }}
     >
