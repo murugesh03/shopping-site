@@ -14,13 +14,13 @@ const ProductProvider = (props) => {
       products = [...products, singleItem];
     });
     storeProductinfo(() => {
-      return { ...productinfo, products: products };
+      return { ...productinfo, products };
     });
   };
 
   useEffect(() => {
     setProducts();
-  }, []);
+  }, [productinfo]);
 
   const getItem = (id) => {
     const product = productinfo.products.find((item) => item.id === id);
