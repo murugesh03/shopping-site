@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { storeProducts, detailProduct } from "./data";
+import ProductList from "./Components/ProductList/ProductList";
 const ProductContext = createContext();
 
 const ProductProvider = (props) => {
@@ -9,10 +10,13 @@ const ProductProvider = (props) => {
   });
   const setProducts = () => {
     let products = [];
-    storeProducts.forEach((item) => {
-      const singleItem = { ...item };
-      products = [...products, singleItem];
-    });
+    storeProducts.forEach(
+      (item) => {
+        const singleItem = { ...item };
+        products = [...products, singleItem];
+      },
+      [ProductList]
+    );
     storeProductinfo(() => {
       return { ...productinfo, products };
     });
@@ -20,7 +24,7 @@ const ProductProvider = (props) => {
 
   useEffect(() => {
     setProducts();
-  }, [productinfo]);
+  }, []);
 
   const getItem = (id) => {
     const product = productinfo.products.find((item) => item.id === id);

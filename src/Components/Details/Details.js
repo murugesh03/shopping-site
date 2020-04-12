@@ -42,9 +42,11 @@ const Details = () => {
                   some info about product:
                 </p>
                 <p className="text-muted lead">{info}</p>
-                <button className="back-to-products-btn">
-                  back to products
-                </button>
+                <Link to="/">
+                  <button className="back-to-products-btn">
+                    back to products
+                  </button>
+                </Link>
                 <button
                   disabled={inCart ? true : false}
                   onClick={() => {
