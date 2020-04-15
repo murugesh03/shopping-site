@@ -51,6 +51,7 @@ const Details = () => {
                   disabled={inCart ? true : false}
                   onClick={() => {
                     productValues.addToCart(id);
+                    productValues.openModel(id);
                   }}
                   className="back-to-products-btn add-to-cart"
                 >

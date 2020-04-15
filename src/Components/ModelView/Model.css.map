@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,gBAAgB,CAAC;EACf,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,UAAU,EAAE,kBAAkB;EAC9B,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACpB;;AACD,AAAA,cAAc,CAAC;EACb,UAAU,ECXC,OAAO;CDYnB",
+    "sources": [
+        "Model.scss",
+        "../../utilities/Variable.scss"
+    ],
+    "names": [],
+    "file": "Model.css"
+}

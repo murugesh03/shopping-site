@@ -7,16 +7,21 @@ const ProductProvider = (props) => {
     products: [],
     detailProducts: detailProduct,
     cart: [],
+    modalOpen: false,
+    modalProduct: detailProduct,
   });
+
   useEffect(() => {
     setProducts();
   }, []);
+
   const setProducts = () => {
     let products = [];
     storeProducts.forEach((item) => {
       const singleItem = { ...item };
       products = [...products, singleItem];
     });
+
     storeProductinfo(() => {
       return { ...productinfo, products: products };
     });
@@ -26,6 +31,7 @@ const ProductProvider = (props) => {
     const product = productinfo.products.find((item) => item.id === id);
     return product;
   };
+
   const handleDetail = (id) => {
     const product = getItem(id);
 
@@ -33,6 +39,7 @@ const ProductProvider = (props) => {
       return { ...productinfo, detailProducts: product };
     });
   };
+
   const addToCart = (id) => {
     let tempProduct = [...productinfo.products];
     const index = tempProduct.indexOf(getItem(id));
@@ -46,17 +53,34 @@ const ProductProvider = (props) => {
         return { products: tempProduct, cart: [...productinfo.cart, product] };
       },
       () => {
-        console.log([productinfo]);
+        console.log(productinfo);
       }
     );
   };
 
+  const openModel = (id) => {
+    const product = getItem(id);
+    storeProductinfo(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
+
+  const closeModel = () => {
+    storeProductinfo(() => {
+      return {
+        ...productinfo,
+        modalOpen: false,
+      };
+    });
+  };
   return (
     <ProductContext.Provider
       value={{
         ...productinfo,
         handleDetail: handleDetail,
         addToCart: addToCart,
+        openModel: openModel,
+        closeModel: closeModel,
       }}
     >
       {props.children}

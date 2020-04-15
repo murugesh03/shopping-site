@@ -56,4 +56,9 @@
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
+
+.product-wrapper .cart-btn:hover {
+  color: #2a2a72;
+  cursor: pointer;
+}
 /*# sourceMappingURL=Product.css.map */

@@ -1,0 +1,36 @@
+.back-to-products-btn {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  background: transparent;
+  border: 0.05rem solid #009ffd;
+  color: #009ffd;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  margin: 0.2rem 0.5rem 0.2rem 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.back-to-products-btn:hover {
+  background: #009ffd;
+  color: #2a2a72;
+}
+
+.back-to-products-btn:hover {
+  outline: none;
+}
+
+.back-to-products-btn:focus {
+  outline: 0;
+}
+
+.add-to-cart {
+  border-color: #ffa400;
+  color: #ffa400;
+}
+
+.add-to-cart:hover {
+  background: #ffa400;
+}
+/*# sourceMappingURL=Details.css.map */
