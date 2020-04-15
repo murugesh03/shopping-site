@@ -1,30 +1,26 @@
 import React, { createContext, useState, useEffect } from "react";
 import { storeProducts, detailProduct } from "./data";
-import ProductList from "./Components/ProductList/ProductList";
 const ProductContext = createContext();
 
 const ProductProvider = (props) => {
   const [productinfo, storeProductinfo] = useState({
     products: [],
     detailProducts: detailProduct,
+    cart: [],
   });
-  const setProducts = () => {
-    let products = [];
-    storeProducts.forEach(
-      (item) => {
-        const singleItem = { ...item };
-        products = [...products, singleItem];
-      },
-      [ProductList]
-    );
-    storeProductinfo(() => {
-      return { ...productinfo, products };
-    });
-  };
-
   useEffect(() => {
     setProducts();
   }, []);
+  const setProducts = () => {
+    let products = [];
+    storeProducts.forEach((item) => {
+      const singleItem = { ...item };
+      products = [...products, singleItem];
+    });
+    storeProductinfo(() => {
+      return { ...productinfo, products: products };
+    });
+  };
 
   const getItem = (id) => {
     const product = productinfo.products.find((item) => item.id === id);
@@ -34,11 +30,25 @@ const ProductProvider = (props) => {
     const product = getItem(id);
 
     storeProductinfo(() => {
-      return { detailProducts: product };
+      return { ...productinfo, detailProducts: product };
     });
   };
   const addToCart = (id) => {
-    console.log(`hello from add to cart is ${id} `);
+    let tempProduct = [...productinfo.products];
+    const index = tempProduct.indexOf(getItem(id));
+    const product = tempProduct[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+    storeProductinfo(
+      () => {
+        return { products: tempProduct, cart: [...productinfo.cart, product] };
+      },
+      () => {
+        console.log([productinfo]);
+      }
+    );
   };
 
   return (

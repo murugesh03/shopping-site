@@ -10,10 +10,11 @@ const ProductList = () => {
           <Title name="our" title="products" />
           <div className="row">
             <ProductConsumer>
-              {(value) => {
-                return value.products
-                  ? value.products.map((product) => {
-                      console.log(product);
+              {(Value) => {
+                // console.log(Value);
+                return Value.products
+                  ? Value.products.map((product) => {
+                      // console.log(product);
                       return <Product key={product.id} product={product} />;
                     })
                   : null;
